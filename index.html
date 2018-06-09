@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Webap</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="webap.css">
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="jquery-ui.js"></script>
+</head>
+<body>
+<div id="menu">
+  <div class="page" id="design">
+    Design
+  </div>
+  <div class="page" id="code">
+    Code
+  </div>
+  <div class="page" id="settings">
+    Settings
+  </div>
+  <div id="splitter">
+    
+  </div>
+  <div class="page" id="run" onclick="run()">
+    Run
+  </div>
+</div>
+<div id="toolbox">
+  <p class="title" title="Move elements from here to your app">Toolbox</p>
+  <p class="item" onclick="addElement('button')">
+  	Button
+  </p>
+  <p class="item" onclick="addElement('label')">
+    Label
+  </p>
+</div>
+<div id="preview">
+	<div id="window">
+		<div id="windowtitle" onclick="loadProperties(this)">
+			 <img src="img.png" width="13"> <span id="windowtitletext">My New App</span>
+		</div>
+		<div id="windowcontent">
+			
+		</div>
+	</div>
+</div>
+<div id="properties">
+  <p class="title" title="Change the elements properties here.">Properties</p>
+  <center>
+    <br>
+    <b id="pselect">Selected Window</b>
+    <br>
+    <br>
+    <table onchange="update()">
+      <tr id="pname">
+        <td>Name</td>
+        <td><input value="" id="piname" onkeydown="update()"></td>
+      </tr>
+      <tr id="ptext">
+        <td>Text</td>
+        <td><input id="pitext" onkeydown="update()"></td>
+      </tr>
+    </table>
+    <a onclick="del()" href="javascript:void(0);" class="button red">Delete</a>
+  </center>
+</div>
+</body>
+<script src="javascript.js"></script>
+</html>

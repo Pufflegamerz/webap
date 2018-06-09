@@ -1,0 +1,16 @@
+.button {
+	padding: 1px 1px;
+	border: 1px solid black;
+	color: black;
+	text-decoration: none;
+	background: lightgrey;
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+	left: 0px;
+	top: 2px;
+}
+.label {
+	user-select: none;
+	font-family: arial;
+}

@@ -1,0 +1,107 @@
+body,html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+#menu {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid black;
+}
+#toolbox {
+	height: calc(100% - 41px);
+	width: 300px;
+	border-right: 1px solid black;
+	float: left;
+}
+#toolbox .title  {
+	margin: 0;
+	width: 100%;
+	background: rgb(247,239,106);
+	user-select: none;
+}
+#properties .title  {
+	margin: 0;
+	width: 100%;
+	background: rgb(247,239,106);
+	user-select: none;
+}
+#toolbox .item:hover {
+	background: lightgrey;
+}
+#toolbox .item {
+	margin: 0;
+	cursor: pointer;
+	width: 100%;
+	user-select: none;
+}
+#properties {
+	height: calc(100% - 41px);
+	width: 300px;
+	border-left: 1px solid black;
+	float: right;
+}
+#preview {
+	height: calc(100% - 41px);
+	width: calc(100% - 602px);
+	float: left;
+	background: #f9f7f7;
+}
+#preview #window {
+	margin-top: 30px;
+	margin-left: 30px;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+	resize: both;
+	overflow: auto;
+	min-width: 400px;
+	min-height: 150px;
+	max-width: calc(100% - 60px);
+	max-height: calc(100% - 60px);
+	background: white;
+}
+#preview #window #windowtitle {
+	height: 18px;
+	width: 100%;
+	border-bottom: 1px solid black;
+	user-select: none;
+	cursor: move;
+}
+#preview #window #windowcontent {
+	height: calc(100% - 19px);
+	width: 100%;
+}
+#menu .page {
+	font-family: arial;
+	font-size: 21px;
+	text-align: center;
+	padding: 8px 25px;
+	margin-left: 5px;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	display: table-cell;
+	float: left;
+	background: lightgrey;
+	cursor: pointer;
+}
+#menu .page:hover {
+	text-decoration: underline;
+}
+#menu #run {
+	background: lightgreen;
+}
+#menu #splitter {
+	width: 1px;
+	background: black;
+	margin-left: 15px;
+	margin-right: 10px;
+	float: left;
+	height: 40px;
+}
+#properties input {
+	width: 200px;
+}
+#properties tr {
+	display: table-row;
+}
