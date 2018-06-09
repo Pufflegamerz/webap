@@ -9,13 +9,13 @@
 </head>
 <body>
 <div id="menu">
-  <div class="page" id="design">
+  <div class="page" id="design" onclick="view('d')">
     Design
   </div>
-  <div class="page" id="code">
+  <div class="page" id="code" onclick="view('c')">
     Code
   </div>
-  <div class="page" id="settings">
+  <div class="page" id="settings" onclick="view('s')">
     Settings
   </div>
   <div id="splitter">
@@ -35,7 +35,7 @@
   </p>
 </div>
 <div id="preview">
-	<div id="window">
+	<div id="window" style="width: 400px; height: 300px;">
 		<div id="windowtitle" onclick="loadProperties(this)">
 			 <img src="img.png" width="13"> <span id="windowtitletext">My New App</span>
 		</div>
@@ -54,15 +54,24 @@
     <table onchange="update()">
       <tr id="pname">
         <td>Name</td>
-        <td><input value="" id="piname" onkeydown="update()"></td>
+        <td><input value="" id="piname"></td>
       </tr>
       <tr id="ptext">
         <td>Text</td>
-        <td><input id="pitext" onkeydown="update()"></td>
+        <td><input id="pitext"></td>
       </tr>
     </table>
-    <a onclick="del()" href="javascript:void(0);" class="button red">Delete</a>
+    <a onclick="del()" class="button red">Delete</a>
   </center>
+</div>
+<div id="settingsbox">
+  <a onclick="msg('build')" class="button">Export</a>
+</div>
+<div id="codebox">
+  code
+</div>
+<div id="messages">
+  
 </div>
 </body>
 <script src="javascript.js"></script>

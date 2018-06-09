@@ -105,3 +105,46 @@ body,html {
 #properties tr {
 	display: table-row;
 }
+#windowcontent {
+	overflow: hidden;
+}
+#settingsbox {
+	width: 100%;
+	height: calc(100% - 41px);
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	z-index: 5;
+	background: white;
+	border: transparent;
+	display: none;
+}
+#codebox {
+	width: 100%;
+	height: calc(100% - 41px);
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	z-index: 5;
+	background: white;
+	border: transparent;
+	display: none;
+}
+.popup {
+	width: 300px;
+	height: 150px;
+	border: 1px solid black;
+	background: white;
+	resize: both;
+	position: absolute;
+	top: calc(50% - 150px);
+	left: calc(50% - 300px);
+	z-index: 10;
+}
+.popup .popuptitle {
+	width: 100%;
+	user-select: none;
+	cursor: move;
+	height: 19px;
+	border-bottom: 1px solid black;
+}

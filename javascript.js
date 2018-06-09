@@ -31,15 +31,15 @@ function run() {
 function loadProperties(element) {
 	current = element;
 	document.getElementById("pselect").innerHTML = "Selected " + element.id;
-	if (element.className.startsWith("button")) {
+	 if (element.id == "windowtitle") {
+		togglep("name","h");
+		togglep("text","s",document.getElementById('windowtitletext').innerHTML);
+	} else if (element.className.startsWith("button")) {
 		togglep("name","s",element.name);
 		togglep("text","s",element.innerHTML);
 	} else if (element.className.startsWith("label")) {
 		togglep("name","s",element.name);
 		togglep("text","s",element.innerHTML);
-	} else if (element.id == "windowtitle") {
-		togglep("name","h");
-		togglep("text","s",document.getElementById('windowtitletext').innerHTML);
 	}
 }
 
@@ -57,22 +57,47 @@ function togglep(u,v,p) {
 
 // Function to handle property updates
 function update() {
-	if (document.getElementById('piname').value == "") {
-
+	if (current.className.startsWith("button")) {
+		current.innerHTML = document.getElementById('pitext').value;
+		current.name = document.getElementById('piname').value;
+	} else if (current.className.startsWith("label")) {
+		current.innerHTML = document.getElementById('pitext').value;
+		current.name = document.getElementById('piname').value;
+	} else if (current.id == "windowtitle") {
+		document.getElementById('windowtitletext').innerHTML = document.getElementById('pitext').value;
 	} else {
-		if (current.className.startsWith("button")) {
-			current.innerHTML = document.getElementById('pitext').value;
-			current.name = document.getElementById('piname').value;
-		} else if (current.className.startsWith("label")) {
-			current.innerHTML = document.getElementById('pitext').value;
-			current.name = document.getElementById('piname').value;
-		} else if (current.id == "windowtitle") {
-			document.getElementById('windowtitletext').innerHTML = document.getElementById('pitext').value;
-		}
+		alert("Error");
 	}
 }
 
 // Delete function
 function del() {
 	current.outerHTML = "";
+	loadProperties("windowtitle");
+}
+
+// Function to switch the view from design, code, and settings.
+function view(type) {
+	if (type == "d") {
+		document.getElementById('codebox').style.display = "none";
+		document.getElementById('settingsbox').style.display = "none";
+	} else if (type == "s") {
+		document.getElementById('codebox').style.display = "none";
+		document.getElementById('settingsbox').style.display = "block";
+	} else if (type == "c") {
+		document.getElementById('codebox').style.display = "block";
+		document.getElementById('settingsbox').style.display = "none";
+	}
+}
+function msg(title,text) {
+	if (title == "build" && text == undefined) {
+		document.getElementById('messages').innerHTML += "<div class='popup'><div class='popuptitle'><span>Build Project...</span></div><span>stuff</span></div>";
+		document.getElementsByClassName('popup')[0].style.width = "500px";
+		document.getElementsByClassName('popup')[0].style.height = "250px";
+	} else {
+		document.getElementById('messages').innerHTML += "<div class='popup'><div class='popuptitle'><span>" + title + "</span></div><span>" + text + "</span></div>";
+	}
+	$(function() {
+		$(".popup").draggable({containment: "window", handle: ".popuptitle"});
+	});
 }
