@@ -24,7 +24,7 @@ function run() {
 		preview.close();
 	}
 	var fwindow = document.getElementById('window');
-	preview = window.open("preview.html?c=" + btoa(content.innerHTML) + "", "window", "width=" + fwindow.style.width + ",height=" + fwindow.style.height + "");
+	preview = window.open("preview.html?c=" + btoa(content.innerHTML + "<script>" + document.getElementById('codearea').value + "</script>") + "", "window", "width=" + fwindow.style.width + ",height=" + fwindow.style.height + "");
 }
 
 // Function to load the properties and handle some buttons
@@ -73,7 +73,7 @@ function update() {
 // Delete function
 function del() {
 	current.outerHTML = "";
-	loadProperties("windowtitle");
+	loadProperties(windowtitle);
 }
 
 // Function to switch the view from design, code, and settings.
@@ -100,4 +100,12 @@ function msg(title,text) {
 	$(function() {
 		$(".popup").draggable({containment: "window", handle: ".popuptitle"});
 	});
+}
+function get(file) {
+	var client = new XMLHttpRequest();
+	client.open('GET', file);
+	client.onreadystatechange = function() {
+		return client.responseText;
+	}
+	client.send();
 }

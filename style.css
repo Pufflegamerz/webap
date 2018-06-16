@@ -148,3 +148,8 @@ body,html {
 	height: 19px;
 	border-bottom: 1px solid black;
 }
+#codearea {
+	width: calc(100% - 6px);
+	height: calc(100% - 9px);
+	resize: none;
+}
