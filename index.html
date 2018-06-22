@@ -24,6 +24,9 @@
   <div class="page" id="run" onclick="run()">
     Run
   </div>
+  <div class="page" id="run" onclick="msg('build')">
+    Export
+  </div>
 </div>
 <div id="toolbox">
   <p class="title" title="Move elements from here to your app">Toolbox</p>
@@ -65,7 +68,7 @@
   </center>
 </div>
 <div id="settingsbox">
-  <a onclick="msg('build')" class="button">Export</a>
+  <a onclick="msg('1','2');" class="button">random message</a>
 </div>
 <div id="codebox">
   <textarea id="codearea">
@@ -75,6 +78,9 @@ whenclicked("element1", function() {
   </textarea>
 </div>
 <div id="messages">
+  
+</div>
+<div id="temp" style="display: ">
   
 </div>
 </body>

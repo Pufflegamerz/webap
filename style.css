@@ -153,3 +153,9 @@ body,html {
 	height: calc(100% - 9px);
 	resize: none;
 }
+.close {
+	float: right;
+	color: red;
+	user-select: none;
+	cursor: pointer;
+}
